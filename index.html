@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>About | Olivia Kelly</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style-index.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alan+Sans:wght@300..900&family=Gloock&family=Gravitas+One&family=Playwrite+DE+Grund:wght@100..400&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
+    </style>
+   
+</head>
+<body>
+    <header>
+        <!-- NAV ELEMENT -->
+        <nav class="navbar">
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#">About</a>
+                <a href="/src/JBResume.pdf" target="_blank">Resume</a>
+                <a href="photos.html">Photos</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="nav-socials">
+                <a href="https://www.instagram.com/jordan_berke/" target="_blank">
+                    <img src="/src/instagram-icon.svg" alt="Instagram"/>
+                </a>
+                <a href="https://www.tiktok.com/@jordy_berke?is_from_webapp=1&sender_device=pc" target="_blank">
+                    <img src="/src/tiktok-icon.svg" alt="TikTok"/>
+                </a>
+            </div>
+
+            <a class="navbar-brand" href="#">Jordan Berke</a>
+            
+        </nav>
+    </header>
+    <main>
+    <!-- HERO ELEMENT -->
+        <section class="hero">
+            <!-- ATTENTION, THIS MAY BE A BIG TASKS, LAYERING ELEMENT OVER ELEMENT, THIS MAY TAKE A WHILE -->
+            <div class="hero-reel">
+                 <!-- ENTER VIDEO TAG -->
+                <video class="reel" autoplay muted loop preload="metadata" loading="lazy">
+                    <source src="/src/Headshot1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-content">
+                <div class="roles">
+                    <span class="role-item">Theatre</span>
+                    <span class="role-item">Film & TV</span>
+                    <span class="role-item">Model</span>
+                </div>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary" target="_blank">Download Reel</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Download Headshot/Resume</a>
+                </div>
+                <!-- LAYER TITLE AND ROLES INFRONT OF REEL UNDER THE DOWNLOAD BUTTONS-->
+            </div>
+        </section>
+
+    <!-- ABOUT ELEMENT -->
+        <div class="about">
+            <div class="headshot-title-wrapper">
+                <h3 class="name">
+                    Jordan Berke
+                </h3>
+                <img class="headshot" src="/src/Headshot1.jpg" alt="headshot image of Jordan Berke" loading="lazy"/>
+            </div>
+            <section>
+                <div class ="about-header"> <header id="about">Hi, I'm Jordan. But you can call me </header> <header class="nickname">Jordy.</header></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus mollitia aspernatur reiciendis consectetur quis quia eveniet quaerat atque dolore, fugit ab quam tempora alias officia libero, vel architecto error?</p>
+            </section>
+        </div>
+
+    <!-- MY WORK -->
+     <div class="divider">
+            <h2 class="my-work-title">My Work</h2>
+            <!-- IMPLEMENT A SCROLLABLE GALLERY -->
+            <div class="gallery-wrapper">
+                <div class="scroll-container" id="scrollContainer">
+                <div class="image-card"><img src="/src/Headshot1.jpg" alt="Jordan Berke Production Image" class="lazy-image" width="600" height="400"><div class="image-loader"></div></div>
+                <div class="image-card"><img src="/src/Headshot2.jpg" alt="Jordan Berke Production Image" class="lazy-image" width="600" height="400"><div class="image-loader"></div></div>
+                <div class="image-card"><img src="/src/jordanbheadshot2.jpg" alt="Jordan Berke Production Image" class="lazy-image" width="600" height="400"><div class="image-loader"></div></div>
+                <div class="image-card"><img src="/src/jordanbheadshot2.jpg" alt="Jordan Berke Production Image" class="lazy-image" width="600" height="400"><div class="image-loader"></div></div>
+                </div>
+                <button class="scroll-btn scroll-btn-left" id="scrollLeft" aria-label="Scroll left"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                <button class="scroll-btn scroll-btn-right" id="scrollRight" aria-label="Scroll right"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                </div>
+        </div>
+
+        <div class="projects">
+                <div class="recently">
+                    <section>
+                        <header id="experience">Past Projects</header>
+                        <p>Spanning from film, TV, Theatre and Print, my experience is vast. Veiw my full list of works.</p>
+                        <!-- INPUT RESUME HERE -->
+                        <a href="#" class="btn btn-primary">See Past Projects</a>
+                    </section>
+                </div> 
+
+                <div class="whats-next">
+                    <section>
+                        <header>Upcoming Projects</header>
+                        <p>Looking to catch my next performance? I will be performing in Actor Shakespeare Project's Performance of The Little Women. Grab a ticket before they sell out!</p>
+                        <a href="#" class="btn btn-primary">See Upcoming Projects</a>
+                    </section>
+                </div>
+        </div>
+    </main>
+    <footer>
+         <!-- ALIGN TOP LEFT -->
+        <div class=" footer-wrapper">
+            <ul id="socials-links">
+                <!-- REPL -->
+                <li><a href="https://www.instagram.com/jordan_berke/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@jordy_berke?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
+                <li><a href="https://www.imdb.com/name/nm13423305/" target="_blank">IMDB</a></li>
+            </ul>
+                <h3 id="footer-message">Jordan Berke</h3>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="/js/index.js" defer></script>
+</body>
+</html>
