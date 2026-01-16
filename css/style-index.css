@@ -145,26 +145,29 @@ p {
 }
 
 /* HERO/REEL */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
+/* HERO/REEL */
 .hero {
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
-    background-color: #eceae2;
+    width: 100%;
+    height: 100vh;
     max-width: 1728px;
     margin: 0 auto;
-  }
-  
+    background-color: #3E2723;
+}
+
+.hero-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    background-color: #3E2723;
+}
 
 .hero-reel {
-    position: absolute;
-    top: 0;
-    right:0;
-    width: 45%;
+    width: 40%;
     position: relative;
     overflow: hidden;
 }
@@ -173,35 +176,17 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* z-index: 1; */
-}
-
-.hero-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
 }
 
 .open-message {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    gap: 2rem;
     opacity: 0;
-    filter: blur(10px); /* Initial blur state */
+    filter: blur(10px);
     animation: blurAndFadeIn 1s ease forwards;
     animation-delay: 0.5s;
-    pointer-events: auto;
     color: #eceae2;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.351);
     font-weight: 300;
-    background-color: #3E2723;
+    max-width: 600px;
 }
 
 .message-line {
@@ -209,23 +194,28 @@ p {
     font-size: 1.5rem;
     color: #eceae2;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.351);
+    margin-bottom: 1rem;
 }
 
 .download-buttons {
-    position: relative;
     display: flex;
     flex-direction: row;
-    gap: 1rem; /* Space between the two icons */
+    gap: 1.5rem;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .download-buttons a {
     display: flex;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.download-buttons a:hover {
+    transform: scale(1.1);
 }
 
 .download-buttons a img,
@@ -233,6 +223,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* ABOUT SECTION */
