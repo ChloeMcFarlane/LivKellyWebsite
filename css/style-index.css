@@ -7,12 +7,12 @@
 }
 
 body {
-    background-color: #FAD6D3;
+    background-color: #EFEBE6;
 }
 
 p {
     margin-bottom: 0;
-    font-family: "Vend Sans", sans-serif;
+    font-family: "Noto Sans Mono", monospace;
 }
 
 .playfair-display-regular {
@@ -30,15 +30,22 @@ p {
     font-variation-settings: "wdth" 100;
 }
 
+
 /* TRANSITIONS */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@keyframes slideInBlur {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+@keyframes blurAndFadeIn {
+    from { 
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to { 
+        opacity: 1;
+        filter: blur(0px);
+    }
 }
 
 @keyframes bounce {
@@ -52,9 +59,18 @@ p {
     100% { background-position: 200% 0; }
 }
 
+@keyframes blurIn {
+    0% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
 /* NAV BAR */
 .navbar {
-    background-color: #83512e;
+    background-color: #002147;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -63,9 +79,9 @@ p {
 }
 
 .navbar-brand {
-    font-family: "Abril Fatface", monospace;
+    font-family: "Playfair Display", serif;
     font-size: clamp(24px, 5vw, 36px);
-    color: #FAD6D3;
+    color: #EFEBE6;
     text-decoration: none;
     position: absolute;
     left: 50%;
@@ -75,7 +91,7 @@ p {
 }
 
 .navbar-brand:hover {
-    color: #e0bfd6;
+    color: #D2B48C;
 }
 
 /* Hamburger Menu */
@@ -93,7 +109,7 @@ p {
 .nav-toggle span {
     width: 25px;
     height: 3px;
-    background-color: #FAD6D3;
+    background-color: #EFEBE6;
     transition: all 0.3s ease;
 }
 
@@ -112,13 +128,14 @@ p {
 /* Navigation Links */
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
 }
 
 .nav-menu a {
-    font-family: "Vend Sans", sans-serif;
-    color: #FAD6D3;
+    font-family: "Noto Sans Mono", monospace;
+    font-weight: 200;
+    color: #EFEBE6;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -127,45 +144,36 @@ p {
     color: #eceae2;
 }
 
-/* Social Icons */
-.nav-socials {
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-socials img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-socials img:hover {
-    opacity: 1;
-    transform: translateY(-3px);
-}
-
 /* HERO/REEL */
 .hero {
     position: relative;
     width: 100%;
     height: 100vh;
 }
+.hero {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background-color: #eceae2;
+    max-width: 1728px;
+    margin: 0 auto;
+  }
+  
 
 .hero-reel {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    right:0;
+    width: 45%;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-reel .reel {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .hero-content {
@@ -178,49 +186,53 @@ p {
     pointer-events: none;
 }
 
-.roles {
+.open-message {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
     gap: 2rem;
     opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
+    filter: blur(10px); /* Initial blur state */
+    animation: blurAndFadeIn 1s ease forwards;
     animation-delay: 0.5s;
     pointer-events: auto;
+    color: #eceae2;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.351);
+    font-weight: 300;
+    background-color: #3E2723;
 }
 
-.role-item {
-    font-family: "Vend Sans", sans-serif;
+.message-line {
+    font-family: "Noto Sans Mono", monospace;
     font-size: 1.5rem;
     color: #eceae2;
+    text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.351);
 }
 
 .download-buttons {
+    position: relative;
     display: flex;
-    gap: 1rem;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    pointer-events: auto;
+    flex-direction: row;
+    gap: 1rem; /* Space between the two icons */
+    margin-top: 2rem;
 }
 
-.download-buttons .btn {
-    background-color: transparent;
-    border: #83512e solid 2px;
-    color: #83512e;
-    padding: 0.75rem 1.5rem;
-    font-family: "Vend Sans", sans-serif;
-    transition: all 0.3s ease;
+.download-buttons a {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
 }
 
-.download-buttons .btn:hover {
-    background-color: #83512e;
-    color: #FAD6D3;
+.download-buttons a img,
+.download-buttons a svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* ABOUT SECTION */
@@ -285,7 +297,7 @@ p {
 }
 
 .about section p {
-    font-family: "Vend Sans", sans-serif;
+    font-family: "Noto Sans Mono", monospace;
     font-size: clamp(16px, 2vw, 24px);
     line-height: 1.6;
     margin-top: 10px;
@@ -443,7 +455,7 @@ p {
 }
 
 .projects section p, .recently section p {
-    font-family: "Vend Sans", sans-serif;
+    font-family: "Noto Sans Mono", monospace;
     font-size: 14px;
     line-height: 1.6;
     margin: 10px 0 15px;
@@ -543,7 +555,7 @@ ul {
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    font-family: "Vend Sans", sans-serif;
+    font-family: "Noto Sans Mono", monospace;
 }
 
 #socials-links li a::after {
@@ -569,19 +581,19 @@ ul {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 700px){
-    .role-item{
+    .message-line{
         font-size: 1.1rem;
     }
 
 }
 
 @media screen and (max-width: 800px) {
-    .roles{
+    .open-message{
         padding-bottom: 15vh;
         gap: 0rem;
     }
 
-    .role-item{
+    .message-line{
         font-size: 1.2rem;
         margin-left: 5vh;
         margin-right: 5vh;
