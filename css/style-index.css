@@ -141,7 +141,7 @@ p {
 }
 
 .nav-menu a:hover {
-    color: #eceae2;
+    color: #D2B48C;
 }
 
 /* HERO/REEL */
@@ -153,17 +153,16 @@ p {
     height: 100vh;
     max-width: 1728px;
     margin: 0 auto;
-    background-color: #3E2723;
+    background-color: #EFEBE6;
 }
 
 .hero-content {
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem;
-    background-color: #3E2723;
+    padding: 2rem;
+    background-color: #EFEBE6;
+    padding-top: 5vh;
 }
 
 .hero-reel {
@@ -173,7 +172,6 @@ p {
 }
 
 .hero-reel .reel {
-    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -183,17 +181,17 @@ p {
     filter: blur(10px);
     animation: blurAndFadeIn 1s ease forwards;
     animation-delay: 0.5s;
-    color: #eceae2;
-    text-align: center;
     font-weight: 300;
     max-width: 600px;
+    text-align: left;
+    
 }
 
 .message-line {
     font-family: "Noto Sans Mono", monospace;
     font-size: 1.5rem;
-    color: #eceae2;
-    text-align: center;
+    color: #002147;
+    text-align: left;
     margin-bottom: 1rem;
 }
 
@@ -202,15 +200,14 @@ p {
     flex-direction: row;
     gap: 1.5rem;
     margin-top: 2rem;
-    justify-content: center;
 }
 
 .download-buttons a {
     display: flex;
     width: 40px;
     height: 40px;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
     transition: transform 0.2s ease;
 }
 
@@ -232,8 +229,8 @@ p {
     padding: 5rem;
     margin-bottom: 15vh;
     align-items: flex-start;
-    font-family: "Abril Fatface", serif;
-    background-color: #f5eee6;
+    font-family: "Playfair Display", serif;
+    background-color: #002147;
 }
 
 .headshot-title-wrapper {
@@ -244,7 +241,7 @@ p {
 
 .about .name {
     font-size: clamp(48px, 4vw, 32px);
-    color: #83512e;
+    color: #EFEBE6;
 }
 
 .about img {
@@ -267,23 +264,23 @@ p {
     flex-direction: column;
 }
 
-.about-header .nickname {
+/* .about-header .nickname {
     color: #f699ad;
     font-size: clamp(32px, 4vw, 18px);
     text-decoration: underline;
-    text-decoration-color: #83512e;
+    text-decoration-color: #EFEBE6;
     text-underline-offset: 2px;
     text-decoration-thickness: 2px;
     opacity: 0;
     transform: translateY(20px);
     animation: slideInBlur 0.6s ease-out forwards;
-}
+} */
 
 .about section header {
-    font-family: "Abril Fatface", serif;
-    font-weight: 750;
+    font-family: "Playfair Display", serif;
+    font-weight: 550;
     font-size: clamp(28px, 4vw, 18px);
-    color: #83512e;
+    color: #D2B48C;
     margin: 0;
 }
 
@@ -293,15 +290,15 @@ p {
     line-height: 1.6;
     margin-top: 10px;
     text-align: justify;
-    color: #E7AE75;
+    color: #EFEBE6;
 }
 
 /* MY WORK TITLE */
 .my-work-title {
-    font-family: "Abril Fatface", serif;
-    font-weight: 750;
+    font-family: "Playfair Display", serif;
+    font-weight: 550;
     font-size: clamp(48px, 4vw, 32px);
-    color: #83512e;
+    color: #D2B48C;
     text-align: center;
 }
 
@@ -347,7 +344,7 @@ p {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    background: #e0bfd680;
+    background: #D2B48C;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     scroll-snap-align: start;
 }
@@ -403,8 +400,8 @@ p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
-    color: #eccaca;
-    background: #3E2723;
+    color: #EFEBE6;
+    background: #002147;
 }
 
 .scroll-btn:hover {
@@ -434,12 +431,12 @@ p {
 .projects, .recently {
     display: flex;
     align-items: center;
-    background-color: #eceae2;
+    background-color: #EFEBE6;
 }
 
 .projects section header, .whats-next h3, .recently h3 {
     font-family: "Abril Fatface", serif;
-    color: #3E2723;
+    color: #002147;
     font-weight: 750;
     font-size: 32px;
     margin: 0;
@@ -466,9 +463,9 @@ p {
     font-family: "Abril Fatface", serif;
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #83512e;
-    border: #83512e;
-    color: #FAD6D3;
+    background-color: #002147;
+    border: #002147;
+    color: #EFEBE6;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -479,9 +476,9 @@ p {
 }
 
 .projects a:hover {
-    background-color: #FAD6D3;
-    color: #83512e;
-    border: 2px solid #83512e;
+    background-color: transparent;
+    color: #002147;
+    border: 2px solid #002147;
 }
 
 .btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
@@ -508,8 +505,8 @@ p {
 
 /* FOOTER */
 footer {
-    background-color: #83512e;
-    color: #eceae2;
+    background-color: #002147;
+    color: #EFEBE6;
     text-align: center;
     padding-top: 20px;
     font-size: 16px;
@@ -536,12 +533,12 @@ ul {
 
 #socials-links li {
     list-style: none;
-    color: #f5eee6;
+    color: #EFEBE6;
     position: relative;
 }
 
 #socials-links li a {
-    color: #eceae2;
+    color: #EFEBE6;
     font-size: 18px;
     text-decoration: none;
     position: relative;
@@ -556,13 +553,13 @@ ul {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background-color: #f5eee6;
+    background-color: #EFEBE6;
     transform: scaleX(0);
     transition: transform 300ms ease;
 }
 
 #socials-links li a:hover {
-    color: #f5eee6;
+    color: #EFEBE6;
 }
 
 #socials-links li a:hover::after {
