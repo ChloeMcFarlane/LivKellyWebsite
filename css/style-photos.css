@@ -3,33 +3,40 @@ FONTS
 ======================================== */
 
 
-.vend-sans{
-    font-family: "Vend Sans", sans-serif;
+.playfair-display-regular {
+    font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
-.alan-sans{
-    font-family: "Alan Sans", sans-serif;
+
+.noto-sans-mono-regular {
+    font-family: "Noto Sans Mono", monospace;
     font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-}
-.gravitas-one-regular {
-    font-family: "Gravitas One", serif;
     font-weight: 400;
     font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
-.abril-fatface-regular {
-    font-family: "Abril Fatface", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.gloock-regular {
-    font-family: "Gloock", serif;
-    font-weight: 400;
-    font-style: normal;
-}
+
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+     @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
 
 /* ========================================
    RESET & BASE STYLES
@@ -41,15 +48,17 @@ FONTS
   }
   
   body {
-    font-family: "Vend Sans", sans-serif;
+    font-family: "Noto Sans Mono", monospace;
     background-color: #ECEAE2 !important;
-    color: #3E2723 !important;
+    color: #EFEBE6 !important;
     line-height: 1.5;
   }
 
 /* ========================================
 NAVIGATION BAR
 ======================================== */
+
+/* NAV BAR */
 .navbar {
     background-color: #002147;
     padding: 1rem 2rem;
@@ -109,6 +118,16 @@ NAVIGATION BAR
     gap: 2.5rem;
     align-items: center;
     margin-left: auto; /* Aligns nav-menu to the right */
+    order: 1; /* Ensure nav-menu is positioned after the brand */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand and nav-menu */
+}
+
+.navbar-brand {
+    order: 0; /* Ensure brand is positioned first */
 }
 
 .nav-menu a {
@@ -122,24 +141,7 @@ NAVIGATION BAR
 .nav-menu a:hover {
     color: #D2B48C;
 }
-/* Social Icons */
-.nav-socials {
-    display: flex;
-    gap: 1rem;
-}
 
-.nav-socials img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-socials img:hover {
-    opacity: 1;
-    transform: translateY(-3px);
-}
   
   /* ========================================
      MAIN LAYOUT
@@ -155,12 +157,12 @@ NAVIGATION BAR
   }
   
   .gallery-title {
-    font-family: "Abril Fatface", serif;
+    font-family: "Playfair Display", serif;
     font-size: 36px;
     line-height: 50px;
     font-weight: 900;
     padding: 10px 0;
-    color: #83512e;
+    color: #D2B48C;
   }
   
   /* ========================================
@@ -183,16 +185,16 @@ NAVIGATION BAR
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
-    color: #83512e;
+    color: #D2B48C;
     transition: all 0.3s ease;
   }
   
   .filter-btn:hover {
-    color: #e0a3ce;
+    color: #002147;
   }
   
   .filter-btn.active {
-    border-bottom: 2px solid #83512e;
+    border-bottom: 2px solid #002147;
   }
   
   /* ========================================
@@ -389,7 +391,7 @@ NAVIGATION BAR
      FOOTER
      ======================================== */
 footer {
-    color: #83512e;
+    color: #002147;
     text-align: center;
     padding-top: 20px;
     font-size: 16px;
@@ -399,7 +401,7 @@ footer {
 
 footer h3 {
     font-size: 96px;
-    font-family: "Abril Fatface", serif;
+    font-family:  "Playfair Display", serif;
 }
 
 #socials-links {
@@ -407,7 +409,7 @@ footer h3 {
     justify-content: center;
     gap: 48px;
     padding: 20px 0;
-    color:#83512e;
+    color:#002147;
 }
 
 ul {
@@ -417,12 +419,12 @@ ul {
 
 #socials-links li {
     list-style: none;
-    color: #83512e;
+    color: #002147;
     position: relative;
 }
 
 #socials-links li a {
-    color:#83512e;
+    color:#002147;
     font-size: 18px;
     text-decoration: none;
     position: relative;
@@ -437,50 +439,84 @@ ul {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background-color:#83512e;
+    background-color:#002147;
     transform: scaleX(0);
     transition: transform 300ms ease;
 }
 
 #socials-links li a:hover {
-    color:#83512e;
+    color:#002147;
 
 }
 
 #socials-links li a:hover::after {
     transform: scaleX(1);
 }
-  /* ========================================
-     ANIMATIONS
-     ======================================== */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .navbar .container-fluid {
-        position: relative;
+
+
+@media (max-width: 950px) {
+    .nav-menu {
+        gap: 1.5rem;
+        font-size: 14px;
     }
 
-    .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+    .nav-socials img {
+        width: 20px;
+        height: 20px;
     }
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+        font-size: clamp(20px, 4vw, 28px);
+        position: relative;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: 1;
+    }
+
+    .nav-socials {
+        order: 3;
+        gap: 0.5rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #83512e;
+        flex-direction: column;
+        padding: 80px 2rem 2rem;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu a {
+        font-size: 18px;
+    }
+}
+
+ 
 @media (max-width: 950px) {
     .nav-menu {
         gap: 1.5rem;

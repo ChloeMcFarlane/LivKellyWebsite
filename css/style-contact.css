@@ -1,0 +1,381 @@
+/* ========================================
+FONTS
+======================================== */
+
+
+.playfair-display-regular {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.noto-sans-mono-regular {
+    font-family: "Noto Sans Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+     @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Noto Sans Mono", monospace;
+    background-color: #ECEAE2 !important;
+    color: #3E2723 !important;
+    line-height: 1.5;
+  }
+
+/* ========================================
+NAVIGATION BAR
+======================================== */
+
+/* NAV BAR */
+.navbar {
+    background-color: #002147;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar-brand {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 5vw, 36px);
+    color: #EFEBE6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.navbar-brand:hover {
+    color: #D2B48C;
+}
+
+/* Hamburger Menu */
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #EFEBE6;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation Links */
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    margin-left: auto; /* Aligns nav-menu to the right */
+    order: 1; /* Ensure nav-menu is positioned after the brand */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand and nav-menu */
+}
+
+.navbar-brand {
+    order: 0; /* Ensure brand is positioned first */
+}
+
+.nav-menu a {
+    font-family: "Noto Sans Mono", monospace;
+    font-weight: 200;
+    color: #EFEBE6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #D2B48C;
+}
+
+
+/* Form Control */
+.form-control {
+    border: 2px solid #002147;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #eceae2;
+}
+
+.form-control:focus {
+    border-color: #002147;
+    box-shadow: 0 0 0 0.2rem rgba(139, 26, 22, 0.25);
+    background-color: #ECEAE2;
+}
+
+/* Buttons */
+.btn-primary {
+    margin-top: 20px;
+    background-color: #002147;
+    border: none;
+    color: #EFEBE6;
+}
+
+.btn:hover, .btn-primary:hover, .btn-lg:hover {
+    margin-top: 20px;
+    background-color: #D2B48C !important;
+    border: 2px solid #002147 !important;
+    color: #002147 !important;
+}
+
+.btn-primary:active {
+    margin-top: 20px;
+    background-color: #D2B48C !important;
+    border: none;
+    color: #002147 !important;
+}
+
+/* FOOTER */
+footer {
+    background-color: #D2B48C;
+    color: #002147;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer h3 {
+    font-size: 96px;
+    font-family: "Playfair Display", serif;
+}
+
+#socials-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+    text-align: left;
+    padding: 20px 0;
+}
+
+ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#socials-links li {
+    list-style: none;
+    color: #f5eee6;
+    position: relative;
+}
+
+#socials-links li a {
+    color: #eceae2;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    font-family: "Noto Sans Mono", monospace;
+}
+
+#socials-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f5eee6;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+}
+
+#socials-links li a:hover {
+    color: #f5eee6;
+}
+
+#socials-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 992px) {
+    .navbar .container-fluid {
+        position: relative;
+    }
+}
+
+@media (max-width: 950px) {
+    .nav-menu {
+        gap: 1.5rem;
+        font-size: 14px;
+    }
+
+    .nav-socials img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+        font-size: clamp(20px, 4vw, 28px);
+        position: relative;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: 1;
+    }
+
+    .nav-socials {
+        order: 3;
+        gap: 0.5rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #83512e;
+        flex-direction: column;
+        padding: 80px 2rem 2rem;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu a {
+        font-size: 18px;
+    }
+
+    footer h3{
+        font-size: 72px;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .download-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -550%);
+        z-index: 2;
+    }
+
+    .download-buttons .btn {
+        font-size: 14px;
+    }
+
+    .about-header {
+        padding-top: 11vh;
+    }
+
+    .about-header .nickname {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 780px), (min-width: 769px) and (max-width: 991px) {
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .nav-link {
+        font-size: 20px;
+        padding: 2% 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-item {
+        position: relative;
+    }
+
+    .nav-item::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #3E2723;
+        transform: scaleX(0);
+        transition: transform 300ms ease;
+    }
+
+    .nav-item:hover::after {
+        transform: scaleX(1);
+    }
+}
