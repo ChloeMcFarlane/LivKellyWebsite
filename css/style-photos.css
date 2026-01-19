@@ -1,0 +1,684 @@
+/* ========================================
+FONTS
+======================================== */
+
+
+.vend-sans{
+    font-family: "Vend Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+.alan-sans{
+    font-family: "Alan Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+.gravitas-one-regular {
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.abril-fatface-regular {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.gloock-regular {
+    font-family: "Gloock", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Vend Sans", sans-serif;
+    background-color: #ECEAE2 !important;
+    color: #3E2723 !important;
+    line-height: 1.5;
+  }
+
+/* ========================================
+NAVIGATION BAR
+======================================== */
+.navbar {
+    background-color: #002147;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navbar-brand {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 5vw, 36px);
+    color: #EFEBE6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.navbar-brand:hover {
+    color: #D2B48C;
+}
+
+/* Hamburger Menu */
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #EFEBE6;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation Links */
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    margin-left: auto; /* Aligns nav-menu to the right */
+}
+
+.nav-menu a {
+    font-family: "Noto Sans Mono", monospace;
+    font-weight: 200;
+    color: #EFEBE6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #D2B48C;
+}
+/* Social Icons */
+.nav-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-socials img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-socials img:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+  
+  /* ========================================
+     MAIN LAYOUT
+     ======================================== */
+  .main-container {
+    padding: 10px 30px;
+  }
+  
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 10px;
+  }
+  
+  .gallery-title {
+    font-family: "Abril Fatface", serif;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 900;
+    padding: 10px 0;
+    color: #83512e;
+  }
+  
+  /* ========================================
+     FILTER BUTTONS
+     ======================================== */
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 10px 0;
+    gap: 10px;
+  }
+  
+  .filter-btn {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 20px;
+    line-height: 34px;
+    cursor: pointer;
+    margin: 0 10px 10px 0;
+    padding: 10px 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #83512e;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn:hover {
+    color: #e0a3ce;
+  }
+  
+  .filter-btn.active {
+    border-bottom: 2px solid #83512e;
+  }
+  
+  /* ========================================
+     GALLERY GRID
+     ======================================== */
+
+.gallery-item img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+  .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px 0;
+  }
+  
+  .gallery-item {
+    display: inline-block;
+    position: relative;
+    padding: 10px 12px 15px 8px;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+  
+  .gallery-item.hidden {
+    display: none;
+  }
+  
+  .image-wrapper {
+    width: 265px;
+    height: 265px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: #f5f5f5;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    /* Lazy loading optimization */
+    /* loading: lazy; */
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.02);
+  }
+  
+  /* View Button Overlay */
+  .btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  .gallery-item:hover .btn-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .view-btn {
+    background-color: rgba(62, 39, 35, 0.7);
+    border: 2px solid #eceae2;
+    color: #eceae2;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+  }
+  
+  .view-btn:hover {
+    background-color: #83512e;
+  }
+  
+  /* ========================================
+     IMAGE OVERLAY MODAL
+     ======================================== */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .overlay.active {
+    display: flex;
+  }
+  
+  .overlay-inner {
+    position: relative;
+    width: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: fadeInUp 0.3s ease;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-family: "Source Sans 3", sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    color: #eceae2;
+    transform: scale(1.05);
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-family: "Source Sans 3", sans-serif;
+  }
+  
+  .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .prev-btn {
+    left: -60px;
+  }
+  
+  .next-btn {
+    right: -60px;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay-image {
+    max-height: 90vh;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .overlay-image.transitioning {
+    opacity: 0;
+  }
+  
+  /* ========================================
+     FOOTER
+     ======================================== */
+footer {
+    color: #83512e;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer h3 {
+    font-size: 96px;
+    font-family: "Abril Fatface", serif;
+}
+
+#socials-links {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 20px 0;
+    color:#83512e;
+}
+
+ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#socials-links li {
+    list-style: none;
+    color: #83512e;
+    position: relative;
+}
+
+#socials-links li a {
+    color:#83512e;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: "Vend Sans", sans-serif;
+}
+
+#socials-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color:#83512e;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+}
+
+#socials-links li a:hover {
+    color:#83512e;
+
+}
+
+#socials-links li a:hover::after {
+    transform: scaleX(1);
+}
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .navbar .container-fluid {
+        position: relative;
+    }
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 950px) {
+    .nav-menu {
+        gap: 1.5rem;
+        font-size: 14px;
+    }
+
+    .nav-socials img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+        font-size: clamp(20px, 4vw, 28px);
+        position: relative;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        order: 2;
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: 1;
+    }
+
+    .nav-socials {
+        order: 3;
+        gap: 0.5rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #83512e;
+        flex-direction: column;
+        padding: 80px 2rem 2rem;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu a {
+        font-size: 18px;
+    }
+}
+
+  /* ========================================
+     RESPONSIVE DESIGN - MOBILE
+     ======================================== */
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 24px;
+    }
+    
+    .main-container {
+      padding: 10px 15px;
+    }
+    
+    .content-wrapper {
+      margin: 40px auto 0;
+    }
+    
+    .gallery-title {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    
+    .filter-btn {
+      font-size: 16px;
+      margin: 0 10px 10px 0;
+      padding: 8px 10px;
+    }
+    
+    .gallery-grid {
+      justify-content: center;
+    }
+    
+    .gallery-item {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+    }
+    
+    .image-wrapper {
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .social-link {
+      font-size: 14px;
+    }
+    
+    #socials-links {
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+  
+    .prev-btn {
+      left: 10px;
+    }
+  
+    .next-btn {
+      right: 10px;
+    }
+  
+    .close-btn {
+      top: 10px;
+      right: 10px;
+    }
+  }
+  
+  /* ========================================
+     RESPONSIVE DESIGN - TABLET
+     ======================================== */
+     @media (min-width: 769px) and (max-width: 991px) {
+
+      .navbar-brand {
+        font-size: 30px;
+      }
+      
+      .nav-link {
+        font-size: 20px;
+        padding: 2% 0; /* Combined padding for top and bottom */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center the text horizontally */
+        align-items: center; /* Center the text vertically */
+      }
+    
+      .nav-item {
+        position: relative; /* Position relative for the underline effect */
+      }
+    
+      .nav-item:hover::after {
+        transform: scaleX(0); /* Scale to full width on hover */
+      }
+    }
+    
+  /* ========================================
+     RESPONSIVE DESIGN - SMALL MOBILE
+     ======================================== */
+  @media (max-width: 780px) {
+    
+    .nav-link {
+      font-size: 20px;
+      padding: 2% 0; /* Combined padding for top and bottom */
+      display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Center the text horizontally */
+      align-items: center; /* Center the text vertically */
+    }
+    
+    .nav-item {
+      position: relative; /* Position relative for the underline effect */
+    }
+    .nav-item:hover::after {
+      transform: scaleX(0); /* Scale to full width on hover */
+    }
+    
+    .gallery-title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    
+    .filter-btn {
+      font-size: 14px;
+      margin: 0 8px 8px 0;
+      padding: 6px 8px;
+    }
+    
+    .image-wrapper {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .gallery-item {
+      width: 85%;
+      max-width: 75%;
+    }
+
+  }
