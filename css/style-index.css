@@ -68,6 +68,95 @@ p {
     }
 }
 
+/* SCROLL REVEAL ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInBlur {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Scroll Reveal Base Class */
+.scroll-reveal {
+    opacity: 0;
+    transition: none;
+}
+
+.scroll-reveal.revealed {
+    animation-fill-mode: forwards;
+}
+
+/* Scroll Reveal Variants */
+.scroll-reveal-up.revealed {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.scroll-reveal-left.revealed {
+    animation: fadeInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.scroll-reveal-right.revealed {
+    animation: fadeInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.scroll-reveal-scale.revealed {
+    animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.scroll-reveal-blur.revealed {
+    animation: slideInBlur 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 /* NAV BAR */
 .navbar {
     background-color: #002147;
@@ -159,7 +248,6 @@ p {
     flex-direction: column;
     padding: 2rem;
     background-color: #EFEBE6;
-    padding-top: 5vh;
 }
 
 .hero-img {
@@ -192,6 +280,35 @@ p {
     margin-bottom: 1rem;
 }
 
+.message-line-roles {
+
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    color: #83512e;
+    margin-top: 1rem;
+}
+
+.hero button{
+    margin-top: 2rem;
+    width: 20vw;
+    height: auto; /* Change height to auto to allow wrapping */
+    background-color: #002147;
+    color: #EFEBE6;
+    border: none;
+    border-radius: 4px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 1rem; /* Add padding for better spacing */
+}
+
+.hero button:hover {
+    background-color: #EFEBE6;
+    color: #002147;
+    border: 2px solid #002147;
+}
+
 .media-buttons {
     display: flex;
     flex-direction: row;
@@ -201,8 +318,8 @@ p {
 
 .media-buttons a {
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease;
@@ -245,13 +362,6 @@ p {
     height: 100%;
     position: relative;
     overflow: hidden;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.about img.revealed {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .about-header {
@@ -259,18 +369,6 @@ p {
     display: flex;
     flex-direction: column;
 }
-
-/* .about-header .nickname {
-    color: #f699ad;
-    font-size: clamp(32px, 4vw, 18px);
-    text-decoration: underline;
-    text-decoration-color: #EFEBE6;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 2px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideInBlur 0.6s ease-out forwards;
-} */
 
 .about section header {
     font-family: "Playfair Display", serif;
@@ -608,18 +706,6 @@ ul {
     }
 }
 
-/* @media (min-width: 992px) {
-    .navbar .container-fluid {
-        position: relative;
-    }
-
-    .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-} */
-
 @media (max-width: 950px) {
     .nav-menu {
         gap: 1.5rem;
@@ -633,6 +719,23 @@ ul {
 }
 
 @media (max-width: 768px) {
+ .hero-content {
+        width: 100%;
+        padding: 1rem;
+    }
+
+.hero-content button{
+    width: 50vw;
+}
+
+.media-buttons{
+    gap: 2.5rem;
+}
+
+.media-buttons a{
+    width: 60px;
+    height: 60px;
+}
     .navbar {
         padding: 1rem;
         flex-wrap: nowrap;

@@ -36,11 +36,13 @@
     <!-- HERO ELEMENT -->
         <section class="hero">
             <!-- ATTENTION, THIS MAY BE A BIG TASKS, LAYERING ELEMENT OVER ELEMENT, THIS MAY TAKE A WHILE -->
-            <div class="hero-content">
+            <div class="hero-content scroll-reveal scroll-reveal-left">
                 <div class="open-message">
                     <span class="message-line"><h1>Every Cue, Every Detail, On Time</h1></span>
                     <span class="message-line"><p>Trusted coordination from pre-production to closing night</p></span>
+                    <span class="message-line-roles"><p> Stage Manager & Production Coordinator</p></span>
                 </div>
+                <button class="btn btn-primary" onclick="location.href='#about'">Dive In</button>
                 <div class="media-buttons">
                     <a href="#" target="_blank">
                         <img id="insta" src="/src/instagram-icon-3.svg" alt="Instagram"/>
@@ -50,9 +52,10 @@
                     </a>
                 </div>
 
+
                 <!-- LAYER TITLE AND ROLES INFRONT OF REEL UNDER THE DOWNLOAD BUTTONS-->
             </div>
-            <div class="hero-img">
+            <div class="hero-img scroll-reveal scroll-reveal-right">
                  <!-- ENTER VIDEO TAG -->
                 <img class="img" src="/src/dirspro1.png" alt="Olivia Kelly Production Image" loading="lazy">
             </div>
@@ -60,13 +63,13 @@
 
     <!-- ABOUT ELEMENT -->
         <div class="about">
-            <div class="headshot-title-wrapper">
+            <div class="headshot-title-wrapper scroll-reveal scroll-reveal-left">
                 <h3 class="name">
                     Olivia Kelly
                 </h3>
                 <img class="headshot" src="/src/livkellyheadshot.jpg" alt="headshot image of Olivia Kelly" loading="lazy"/>
             </div>
-            <section>
+            <section class="scroll-reveal scroll-reveal-right" data-delay="200">
                 <div class ="about-header"> <header id="about">I focus on organization so you can focus on artistry </header></div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus mollitia aspernatur reiciendis consectetur quis quia eveniet quaerat atque dolore, fugit ab quam tempora alias officia libero, vel architecto error?</p>
             </section>
@@ -74,9 +77,9 @@
 
     <!-- MY WORK -->
      <div class="divider">
-            <h2 class="my-work-title">My Work</h2>
+            <h2 class="my-work-title scroll-reveal scroll-reveal-up">My Work</h2>
             <!-- IMPLEMENT A SCROLLABLE GALLERY -->
-            <div class="gallery-wrapper">
+            <div class="gallery-wrapper scroll-reveal scroll-reveal-scale" data-delay="200">
                 <div class="scroll-container" id="scrollContainer">
                 <div class="image-card"><img src="#" alt="Olivia Kelly Production Image" class="lazy-image" width="600" height="400"><div class="image-loader"></div></div>
                 <div class="image-card"><img src="#" alt="Olivia Kelly Production Image" class="lazy-image" width="600" height="400"><div class="image-loader"></div></div>
@@ -89,7 +92,7 @@
         </div>
 
         <div class="projects">
-                <div class="recently">
+                <div class="recently scroll-reveal scroll-reveal-up">
                     <section>
                         <header id="experience">Past Projects</header>
                         <p>Spanning from film, TV, Theatre and Print, my experience is vast. Veiw my full list of works.</p>
@@ -98,7 +101,7 @@
                     </section>
                 </div> 
 
-                <div class="whats-next">
+                <div class="whats-next scroll-reveal scroll-reveal-up" data-delay="200">
                     <section>
                         <header>Upcoming Projects</header>
                         <p>Looking to catch my next performance? I will be performing in Actor Shakespeare Project's Performance of The Little Women. Grab a ticket before they sell out!</p>
@@ -107,7 +110,7 @@
                 </div>
         </div>
     </main>
-    <footer>
+    <footer class="scroll-reveal scroll-reveal-blur">
          <!-- ALIGN TOP LEFT -->
         <div class=" footer-wrapper">
             <ul id="socials-links">
