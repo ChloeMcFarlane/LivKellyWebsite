@@ -32,52 +32,52 @@ document.addEventListener('click', (e) => {
 const galleryItems = [
     { 
       id: 0, 
-      thumb: '../src/Headshot1.jpg', 
-      full: '../src/Headshot1.jpg', 
+      thumb: 'src/prodphotos/topgirls1.jpg', 
+      full: 'src/prodphotos/topgirls1.jpg', 
       filter: 'one', 
       alt: 'Theatre' 
     },
     { 
       id: 1, 
-      thumb: '../src/Headshot2.jpg', 
-      full: '../src/Headshot2.jpg', 
+      thumb: '/src/prodphotos/topgirls2.jpg', 
+      full: '/src/prodphotos/topgirls2.jpg', 
       filter: 'one', 
       alt: 'Theatre' 
     },
     { 
       id: 2, 
-      thumb: '../src/Headshot3.jpg', 
-      full: '../src/Headshot3.jpg', 
-      filter: 'two', 
-      alt: 'Print' 
+      thumb: 'src/headshots/careysheffieldphotography_olivia1721.jpg', 
+      full: 'src/headshots/careysheffieldphotography_olivia1721.jpg', 
+      filter: 'three', 
+      alt: 'Headshots' 
     },
     { 
       id: 3, 
-      thumb: '../src/Headshot4.jpg', 
-      full: '../src/Headshot4.jpg', 
-      filter: 'two', 
-      alt: 'Print' 
+      thumb: 'src/prodphotos/topgirls3.jpg', 
+      full: 'src/prodphotos/topgirls3.jpg', 
+      filter: 'one', 
+      alt: 'Theatre' 
     },
     { 
       id: 4, 
-      thumb: '../src/Headshot5.jpg', 
-      full: '../src/Headshot5.jpg', 
-      filter: 'three', 
-      alt: 'Digitals' 
+      thumb: '/src/prodphotos/dirspro1.jpg', 
+      full: '/src/prodphotos/dirspro1.jpg', 
+      filter: 'two', 
+      alt: 'Marketing' 
     },
     { 
       id: 5, 
-      thumb: '../src/Headshot6.jpg', 
-      full: '../src/Headshot6.jpg', 
+      thumb: '/src/headshots/careysheffieldphotography_olivia1708.jpg', 
+      full: '/src/headshots/careysheffieldphotography_olivia1708.jpg', 
       filter: 'three', 
-      alt: 'Digitals' 
+      alt: 'Headshots' 
     },
     { 
       id: 6, 
-      thumb: '../src/Headshot7.jpg', 
-      full: '../src/Headshot7.jpg', 
-      filter: 'four', 
-      alt: 'Stills' 
+      thumb: 'src/headshots/careysheffieldphotography_olivia1723.jpg', 
+      full: 'src/headshots/careysheffieldphotography_olivia1723.jpg', 
+      filter: 'three', 
+      alt: 'Headshots' 
     },
   ];
   
