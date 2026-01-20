@@ -289,7 +289,7 @@ p {
     margin-top: 1rem;
 }
 
-.hero button{
+.hero button, .work .btn{
     margin-top: 2rem;
     width: 20vw;
     height: auto; /* Change height to auto to allow wrapping */
@@ -522,6 +522,8 @@ p {
     transform: translateY(-50%) scale(0.8);
 }
 
+
+
 /* MY WORK TEXT */
 .projects, .recently {
     display: flex;
@@ -535,6 +537,16 @@ p {
     font-weight: 750;
     font-size: 32px;
     margin: 0;
+}
+
+.work .btn {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Make the button take full width */
+    max-width: 300px; /* Set a maximum width if needed */
+    font-size: 1.25rem;
 }
 
 .projects section p, .recently section p {
