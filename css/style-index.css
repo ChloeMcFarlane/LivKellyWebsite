@@ -247,6 +247,7 @@ p {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    margin-left: 5vh;
     background-color: #EFEBE6;
 }
 
@@ -661,81 +662,75 @@ ul {
 }
 
 /* MEDIA QUERIES */
+@media (max-width: 480px) {
+    .gallery-title {
+        font-size: 1.5rem;
+    }
 
-@media screen and (max-width: 700px){
-    .message-line{
+    .scroll-container {
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .image-card img {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .message-line {
         font-size: 1.1rem;
     }
-
 }
 
-@media screen and (max-width: 800px) {
-    .open-message{
-
-        gap: 0rem;
+@media (max-width: 769px) {
+    .gallery-title {
+        font-size: 2rem;
     }
 
-    .message-line{
-        font-size: 1.2rem;
-        margin-left: 5vh;
-        margin-right: 5vh;
+    .gallery-description {
+        font-size: 1rem;
     }
 
-    .about{
-        display: flex;
-        flex-direction: column;
+    .image-card img {
+        width: 400px;
+        height: 267px;
     }
 
-
-
-}
-
-@media screen and (max-width: 865px) {
-
-    .download-buttons{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .about-header {
-        padding-top: 11vh;
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
     }
 
-    .about-header .nickname {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 950px) {
-    .nav-menu {
-        gap: 1.5rem;
-        font-size: 14px;
+    .scroll-btn-left {
+        left: 10px;
     }
 
-    .nav-socials img {
-        width: 20px;
-        height: 20px;
+    .scroll-btn-right {
+        right: 10px;
     }
 }
 
 @media (max-width: 768px) {
- .hero-content {
+    .hero-content {
         width: 100%;
         padding: 1rem;
     }
 
-.hero-content button{
-    width: 50vw;
-}
+    .hero-content button {
+        width: 50vw;
+    }
 
-.media-buttons{
-    gap: 2.5rem;
-}
+    .media-buttons {
+        gap: 2.5rem;
+    }
 
-.media-buttons a{
-    width: 60px;
-    height: 60px;
-}
+    .media-buttons a {
+        width: 60px;
+        height: 60px;
+    }
+
     .navbar {
         padding: 1rem;
         flex-wrap: nowrap;
@@ -784,70 +779,75 @@ ul {
         font-size: 18px;
     }
 
-    .projects{
+    .projects {
         display: flex;
         flex-direction: column;
-        padding-bottom:5vh;
+        padding-bottom: 5vh;
     }
 
-    .recently section{
+    .recently section {
         padding-left: 0;
         margin-left: 0;
     }
-    
-    footer h3{
+
+    footer h3 {
         font-size: 72px;
     }
 }
+
+@media (max-width: 865px) {
+    .download-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-header {
+        padding-top: 5vh;
+    }
+
+    .about-header .nickname {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .open-message {
+        gap: 0rem;
+    }
+
+    .message-line {
+        font-size: 1.2rem;
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about .headshot {
+        height: 550px; /* Set a fixed height */
+        max-height: 90vh; /* Or use 50% of viewport height */
+        object-fit: cover;
+        object-position: center; /* Adjust to top, bottom, left, or right as needed */
+    }
+}
+
 @media (min-width: 769px) and (max-width: 991px) {
-
     .navbar-brand {
-      font-size: 30px;
-    }
-}
-@media (max-width: 769px) {
-
-    .gallery-title {
-        font-size: 2rem;
-    }
-
-    .gallery-description {
-        font-size: 1rem;
-    }
-
-    .image-card img {
-        width: 400px;
-        height: 267px;
-    }
-
-    .scroll-btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    .scroll-btn-left {
-        left: 10px;
-    }
-
-    .scroll-btn-right {
-        right: 10px;
+        font-size: 30px;
     }
 }
 
-@media (max-width: 480px) {
-
-    .gallery-title {
-        font-size: 1.5rem;
+@media (max-width: 950px) {
+    .nav-menu {
+        gap: 1.5rem;
+        font-size: 14px;
     }
 
-    .scroll-container {
-        gap: 15px;
-        padding: 20px 15px;
-    }
-
-    .image-card img {
-        width: 300px;
-        height: 200px;
+    .nav-socials img {
+        width: 20px;
+        height: 20px;
     }
 }
-
