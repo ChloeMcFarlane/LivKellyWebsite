@@ -258,6 +258,7 @@ p {
 }
 
 .hero-img .img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -292,16 +293,18 @@ p {
 .hero button, .work .btn{
     margin-top: 2rem;
     width: 20vw;
-    height: auto; /* Change height to auto to allow wrapping */
+    min-width: 150px;
+    max-width: 300px;
+    height: auto;
     background-color: #002147;
     color: #EFEBE6;
     border: none;
     border-radius: 4px;
     font-family: "Playfair Display", serif;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 1rem; /* Add padding for better spacing */
+    padding: 1rem;
 }
 
 .hero button:hover {
@@ -351,18 +354,24 @@ p {
     margin: 0 5vh 0 3vh;
     display: flex;
     flex-direction: column;
+    min-width: 300px;
+    flex-shrink: 0;
 }
 
 .about .name {
-    font-size: clamp(48px, 4vw, 32px);
+    font-size: clamp(32px, 4vw, 48px);
     color: #EFEBE6;
+    margin-bottom: 1rem;
 }
 
-.about img {
+.about .headshot {
     width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+    height: auto;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
 }
 
 .about-header {
@@ -374,14 +383,14 @@ p {
 .about section header {
     font-family: "Playfair Display", serif;
     font-weight: 550;
-    font-size: clamp(28px, 4vw, 18px);
+    font-size: clamp(24px, 4vw, 32px);
     color: #D2B48C;
     margin: 0;
 }
 
 .about section p {
     font-family: "Noto Sans Mono", monospace;
-    font-size: clamp(16px, 2vw, 24px);
+    font-size: clamp(14px, 2vw, 18px);
     line-height: 1.6;
     margin-top: 10px;
     text-align: justify;
@@ -392,7 +401,7 @@ p {
 .my-work-title {
     font-family: "Playfair Display", serif;
     font-weight: 550;
-    font-size: clamp(48px, 4vw, 32px);
+    font-size: clamp(32px, 4vw, 48px);
     color: #D2B48C;
     text-align: center;
 }
@@ -535,30 +544,30 @@ p {
     font-family: "Abril Fatface", serif;
     color: #002147;
     font-weight: 750;
-    font-size: 32px;
+    font-size: clamp(24px, 4vw, 32px);
     margin: 0;
 }
 
 .work .btn {
-    margin: auto;
+    margin: 2rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Make the button take full width */
-    max-width: 300px; /* Set a maximum width if needed */
-    font-size: 1.25rem;
+    width: 100%;
+    max-width: 300px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .projects section p, .recently section p {
     font-family: "Noto Sans Mono", monospace;
-    font-size: 14px;
+    font-size: clamp(14px, 2vw, 16px);
     line-height: 1.6;
     margin: 10px 0 15px;
     text-align: justify;
 }
 
 .recently{
-    padding:10vh;
+    padding: 5vh;
 }
 
 .projects .btn {
@@ -568,7 +577,7 @@ p {
 
 .projects a {
     font-family: "Abril Fatface", serif;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     padding: 10px 20px;
     background-color: #002147;
     border: #002147;
@@ -597,7 +606,7 @@ p {
 /* WHATS NEXT */
 .whats-next {
     display: flex;
-    padding: 10vh;
+    padding: 5vh;
     align-items: flex-start;
     text-align: justify;
 }
@@ -622,7 +631,7 @@ footer {
 }
 
 footer h3 {
-    font-size: 96px;
+    font-size: clamp(48px, 10vw, 96px);
     font-family: "Abril Fatface", serif;
 }
 
@@ -646,7 +655,7 @@ ul {
 
 #socials-links li a {
     color: #EFEBE6;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -674,75 +683,75 @@ ul {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 480px) {
-    .gallery-title {
-        font-size: 1.5rem;
-    }
 
-    .scroll-container {
-        gap: 15px;
-        padding: 20px 15px;
+/* Tablet breakpoint */
+@media (max-width: 991px) {
+    .hero {
+        height: auto;
+        min-height: 80vh;
     }
-
-    .image-card img {
-        width: 300px;
-        height: 200px;
+    
+    .hero-content {
+        width: 55%;
+        margin-left: 2vh;
     }
-}
-
-@media screen and (max-width: 700px) {
-    .message-line {
-        font-size: 1.1rem;
+    
+    .hero-img {
+        width: 45%;
     }
-}
-
-@media (max-width: 769px) {
-    .gallery-title {
-        font-size: 2rem;
+    
+    .about {
+        padding: 3rem;
     }
-
-    .gallery-description {
-        font-size: 1rem;
-    }
-
-    .image-card img {
-        width: 400px;
-        height: 267px;
-    }
-
-    .scroll-btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    .scroll-btn-left {
-        left: 10px;
-    }
-
-    .scroll-btn-right {
-        right: 10px;
+    
+    .headshot-title-wrapper {
+        margin: 0 3vh 0 1vh;
+        min-width: 250px;
     }
 }
 
+/* Mobile breakpoint - major changes */
 @media (max-width: 768px) {
+    /* Hero section - centered content, hidden image */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .hero-content {
         width: 100%;
-        padding: 1rem;
+        padding: 3rem 1.5rem;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-img {
+        display: none; /* Hide hero image on mobile for cleaner look */
+    }
+
+    .open-message {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .message-line {
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .hero-content button {
-        width: 50vw;
+        width: 60vw;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .media-buttons {
-        gap: 2.5rem;
-    }
-
-    .media-buttons a {
-        width: 60px;
-        height: 60px;
-    }
-
+    /* Navigation */
     .navbar {
         padding: 1rem;
         flex-wrap: nowrap;
@@ -791,10 +800,52 @@ ul {
         font-size: 18px;
     }
 
+    /* About section - stack vertically */
+    .about {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        align-items: center;
+    }
+
+    .headshot-title-wrapper {
+        margin: 0 0 2rem 0;
+        width: 100%;
+        max-width: 400px;
+        align-items: center;
+    }
+
+    .about .name {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .about .headshot {
+        width: 100%;
+        max-width: 350px;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        object-position: center 20%; /* Focuses on top portion of image */
+    }
+
+    .about-header {
+        padding-top: 2rem;
+    }
+
+    .about section {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* Projects section */
     .projects {
         display: flex;
         flex-direction: column;
-        padding-bottom: 5vh;
+        padding: 3rem 1.5rem;
+    }
+
+    .recently, .whats-next {
+        padding: 2rem 0;
     }
 
     .recently section {
@@ -802,56 +853,101 @@ ul {
         margin-left: 0;
     }
 
+    /* Gallery adjustments */
+    .scroll-container {
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .image-card img {
+        width: 320px;
+        height: 213px;
+    }
+
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .scroll-btn-left {
+        left: 5px;
+        margin: 0;
+    }
+
+    .scroll-btn-right {
+        right: 5px;
+        margin: 0;
+    }
+
+    /* Footer */
     footer h3 {
-        font-size: 72px;
+        font-size: clamp(48px, 12vw, 72px);
+    }
+
+    #socials-links {
+        gap: 32px;
+    }
+
+    .media-buttons {
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .media-buttons a {
+        width: 50px;
+        height: 50px;
     }
 }
 
-@media (max-width: 865px) {
-    .download-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .about-header {
-        padding-top: 5vh;
-    }
-
-    .about-header .nickname {
-        margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .open-message {
-        gap: 0rem;
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 2rem 1rem;
     }
 
     .message-line {
-        font-size: 1.2rem;
-        margin-left: 5vh;
-        margin-right: 5vh;
+        font-size: 1.1rem;
+    }
+
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+
+    .scroll-container {
+        gap: 10px;
+        padding: 15px 10px;
+    }
+
+    .image-card img {
+        width: 280px;
+        height: 187px;
     }
 
     .about {
-        display: flex;
-        flex-direction: column;
+        padding: 2rem 1rem;
     }
 
-    .about .headshot {
-        height: 550px; /* Set a fixed height */
-        max-height: 90vh; /* Or use 50% of viewport height */
-        object-fit: cover;
-        object-position: center; /* Adjust to top, bottom, left, or right as needed */
+    .projects {
+        padding: 2rem 1rem;
+    }
+
+    .recently, .whats-next {
+        padding: 1.5rem 0;
+    }
+
+    #socials-links {
+        gap: 24px;
     }
 }
 
+/* Larger tablets */
 @media (min-width: 769px) and (max-width: 991px) {
     .navbar-brand {
         font-size: 30px;
     }
 }
 
+/* Desktop navigation refinements */
 @media (max-width: 950px) {
     .nav-menu {
         gap: 1.5rem;
@@ -861,5 +957,20 @@ ul {
     .nav-socials img {
         width: 20px;
         height: 20px;
+    }
+}
+
+/* Ensure readability on very small screens */
+@media (max-width: 360px) {
+    .hero-content {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .message-line {
+        font-size: 1rem;
+    }
+    
+    .about, .projects {
+        padding: 1.5rem 0.75rem;
     }
 }
