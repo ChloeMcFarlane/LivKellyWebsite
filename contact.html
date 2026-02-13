@@ -21,7 +21,7 @@
     <header>
         <!-- NAV ELEMENT -->
         <nav class="navbar">
-            <a class="navbar-brand" href="#">Olivia Kelly</a>
+            <a class="navbar-brand" href="index.html">Olivia Kelly</a>
 
             <button class="nav-toggle" id="navToggle">
                 <span></span>
@@ -44,18 +44,20 @@
         <div class="container py-4">
             <!-- CONTACT FORM -->
 
-            <form name="contactForm" method="POST" data-netlify="true">
+            <form name="contactForm" method="POST" action="https://formspree.io/f/mgolaqbq">
+                <!-- Honeypot spam protection -->
+                <input type="text" name="_gotcha" style="display:none" />
                 <div class="mb-3">
                     <label class="form-label">Your Name</label>
-                    <input class="form-control" placeholder="Name" type="text" name="name" />
+                    <input class="form-control" placeholder="Name" type="text" name="name" required />
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Your Email</label>
-                    <input class="form-control" placeholder="Email Address" type="email" name="email" />
+                    <input class="form-control" placeholder="Email Address" type="email" name="email" required/>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Message</label>
-                    <textarea class="form-control" placeholder="Message" name="message" style="height: 10rem;"></textarea>
+                    <textarea class="form-control" placeholder="Message" name="message" style="height: 10rem;" required></textarea>
                 </div>
                 <div class="field">
                     <div data-netify-recaptcha="true"></div>
@@ -65,6 +67,10 @@
                     <button class="btn btn-primary btn-lg" type="submit">Send</button>
                 </div>
             </form>
+
+            
+
+
     </main>
 
     <!-- IMPUT FEED HERE? -->
@@ -73,11 +79,11 @@
     <footer>
         <!-- ALIGN TOP LEFT -->
        <div class=" footer-wrapper">
-           <ul id="socials-links">
-               <li><a href="https://www.instagram.com/chlo.mcfarlane/" target="_blank">Instagram</a></li>
-               <li><a href="https://www.tiktok.com/@peachyfuckenkeen?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
-               <li><a href="https://www.imdb.com/name/nm13423305/" target="_blank">IMDB</a></li>
-           </ul>
+        <ul id="socials-links">
+            <!-- REPL -->
+            <li><a href="https://www.instagram.com/kamiivia?igsh=MTIwdXgxaWx4emEzZQ%3D%3D&utm_source=qr" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/liv-kelly-65622334b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Linkedin</a></li>
+        </ul>
                <h3 id="footer-message">Olivia Kelly</h3>
        </div>
    </footer>
