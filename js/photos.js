@@ -79,6 +79,20 @@ const galleryItems = [
       filter: 'three', 
       alt: 'Headshots' 
     },
+    { 
+      id: 7, 
+      thumb: 'src/prodphotos/dirspro4.jpg', 
+      full: 'src/prodphotos/dirspro4.jpg', 
+      filter: 'one', 
+      alt: 'Theatre' 
+    },
+    { 
+      id: 8, 
+      thumb: 'src/prodphotos/dirspro2.jpg', 
+      full: 'src/prodphotos/dirspro2.jpg', 
+      filter: 'one', 
+      alt: 'Theatre' 
+    },
   ];
   
   // ========================================
