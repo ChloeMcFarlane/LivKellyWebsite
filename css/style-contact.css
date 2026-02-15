@@ -49,11 +49,15 @@ FONTS
   
   body {
     font-family: "Noto Sans Mono", monospace;
-    background-color: #ECEAE2 !important;
+    background-color: #D2B48C !important;
     color: #3E2723 !important;
     line-height: 1.5;
   }
 
+  main{
+    background-color: #EFEBE6;
+
+  }
 /* ========================================
 NAVIGATION BAR
 ======================================== */

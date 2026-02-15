@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #EFEBE6;
+    background-color: #002147;
 }
 
 p {
@@ -264,6 +264,9 @@ p {
 }
 
 .open-message {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     opacity: 0;
     filter: blur(10px);
     animation: blurAndFadeIn 1s ease forwards;
@@ -278,8 +281,6 @@ p {
     font-family: "Noto Sans Mono", monospace;
     font-size: 1.5rem;
     color: #002147;
-    text-align: r;
-    margin-bottom: 1rem;
 }
 
 .message-line-roles {
@@ -398,6 +399,12 @@ p {
 }
 
 /* MY WORK TITLE */
+
+.work {
+    background-color: #EFEBE6;
+    padding: 5vh;
+}
+
 .my-work-title {
     font-family: "Playfair Display", serif;
     font-weight: 550;
@@ -556,6 +563,7 @@ p {
     width: 100%;
     max-width: 300px;
     font-size: clamp(1rem, 2vw, 1.25rem);
+    box-shadow:  0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .projects section p, .recently section p {
